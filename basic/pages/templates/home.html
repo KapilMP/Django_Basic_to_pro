@@ -1,8 +1,16 @@
 <p> Input your text: </p>
 
-<form method="" action="{% url 'counter'%}">
+<form method="POST" action="{% url 'counter'%}">
+    {% csrf_token %}
     <textarea rows="10" cols="45" type="text" name="counter" > </textarea> <br> <br>
     <input type="submit" />
 </form>
+
+{% for feature in feature%}
+<div>
+    <p> the id is {{feature.id}} and the name is {{feature.name}} <br> and
+         the details is {{feature.details}} </p>
+    <div>
+{% endfor%}
 
 <p><a href="{% url 'counter' %}?counter=">Go to Counter Page</a></p>
