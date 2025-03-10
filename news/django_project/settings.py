@@ -55,7 +55,7 @@ ROOT_URLCONF = "django_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -111,8 +111,10 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
-AUTH_USER_MODEL = "accounts.CustomUser"
+ 
+AUTH_USER_MODEL = "accounts.CustomUser" # use our new custom user model
+LOGIN_REDIRECT_URL = "home" 
+LOGOUT_REDIRECT_URL = "home"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
